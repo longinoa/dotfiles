@@ -27,7 +27,9 @@ noremap \ ,
 noremap <C-l> :nohlsearch<CR><C-l>
 
 " Solarized color scheme
+syntax on
 set background=dark
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 " NERDTree settings
