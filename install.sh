@@ -21,6 +21,7 @@ LINKED_FILES=(
   xmonad
   Xresources
   zshrc
+  inputrc
 )
 
 for NAME in ${LINKED_FILES[*]}
