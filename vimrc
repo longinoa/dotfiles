@@ -60,3 +60,8 @@ filetype indent on
 " Store all backup files centrally
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+let big_grep="/home/engshare/admin/scripts/vim/biggrep.vim"
+if filereadable(expand(big_grep))
+  exec 'source' big_grep
+endif
