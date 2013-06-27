@@ -44,9 +44,6 @@ alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -CF'
 
-#set prompt style to be vim
-set -o vi
-
 # git prompt, if it's available
 function safe_git_ps1() {
   if [[ `type -t __git_ps1` = function ]]
