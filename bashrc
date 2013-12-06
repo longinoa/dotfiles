@@ -76,3 +76,7 @@ if [ -e "$local_bashrc" ]
 then
   source "$local_bashrc"
 fi
+
+# load git completion
+git_completion=~/.git-completion.bash
+source "$git_completion"
