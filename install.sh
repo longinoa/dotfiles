@@ -22,6 +22,7 @@ LINKED_FILES=(
   Xresources
   zshrc
   inputrc
+  git-completion.bash
 )
 
 for NAME in ${LINKED_FILES[*]}
