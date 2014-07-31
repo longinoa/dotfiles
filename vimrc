@@ -65,3 +65,7 @@ let big_grep="/home/engshare/admin/scripts/vim/biggrep.vim"
 if filereadable(expand(big_grep))
   exec 'source' big_grep
 endif
+
+" vim settings for python
+au Filetype python setl et ts=4 sw=4
+
