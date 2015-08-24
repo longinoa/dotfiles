@@ -45,13 +45,18 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # git prompt, if it's available
-function safe_git_ps1() {
-  if [[ `type -t __git_ps1` = function ]]
-  then
-    __git_ps1 %s
+function branch_ps1() {
+  #if [[ `type -t __git_ps1` = function ]]
+  #then
+  #  __git_ps1 %s
+  if [[ -n $(_dotfiles_scm_info) ]];
+    then
+    # wrap in parens
+    echo "$(_dotfiles_scm_info)"
   fi
 }
-export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(safe_git_ps1)\[\e[m\]\$ "
+
+export PS1="\[\e[0;36m\]\u@\h\[\e[m\] \[\e[0;34m\]\w\[\e[m\] \[\e[0;33m\]\$(branch_ps1)\[\e[m\]\$ "
 
 # fixing ssh-agent issues in tmux
 function fixauth() {
@@ -80,3 +85,9 @@ fi
 # load git completion
 git_completion=~/.git-completion.bash
 source "$git_completion"
+
+hg_path=~/.hg-prompt
+source "$hg_path"
+
+PERL_MB_OPT="--install_base \"/home/longinoa/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/longinoa/perl5"; export PERL_MM_OPT;

@@ -23,6 +23,7 @@ LINKED_FILES=(
   zshrc
   inputrc
   git-completion.bash
+  hg-prompt
 )
 
 for NAME in ${LINKED_FILES[*]}

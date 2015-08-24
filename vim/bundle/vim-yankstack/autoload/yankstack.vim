@@ -116,7 +116,7 @@ function! s:default_paste_key(mode)
   endif
 endfunction
 
-function! g:yankstack()
+function! s:yankstack()
   return [s:get_yankstack_head()] + s:yankstack_tail
 endfunction
 
