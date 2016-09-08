@@ -89,5 +89,20 @@ source "$git_completion"
 hg_path=~/.hg-prompt
 source "$hg_path"
 
+hg_completion=/opt/fbhg/etc/bash_completion.d/mercurial.sh
+if [[ -r $hg_completion ]]; then
+  source $hg_completion
+fi
+
 PERL_MB_OPT="--install_base \"/home/longinoa/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/longinoa/perl5"; export PERL_MM_OPT;
+
+# Fix tmux and bash_histor
+# avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
+
+# append history entries..
+shopt -s histappend
+
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
