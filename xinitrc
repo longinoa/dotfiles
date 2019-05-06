@@ -16,4 +16,4 @@ command -v VBoxClient-all > /dev/null && VBoxClient-all
 xrdb ~/.Xresources
 
 # finally start Xmonad
-xmonad
+#xmonad

@@ -106,3 +106,8 @@ shopt -s histappend
 
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+function getjobs() {
+  val="${1//\./\\\.}"
+  adb shell dumpsys jobscheduler | sed -n -e "/JOB.*$val/,/Ready/ p"
+}
